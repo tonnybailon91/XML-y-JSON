@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>XML y JSON</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #xmlData, #jsonData {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>
+
+    <script>
+        // Función para cargar y mostrar XML
+        function cargarXML() {
+            // Cadena XML de ejemplo
+            const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+            <dragonball>
+                <personajes>
+                    <personaje>
+                        <nombre>Goku</nombre>
+                        <raza>Saiyan</raza>
+                        <planeta_origen>Planeta Vegeta</planeta_origen>
+                        <poder>10000</poder>
+                    </personaje>
+
+                    <personaje>
+                        <nombre>Vegeta</nombre>
+                        <raza>Saiyan</raza>
+                        <planeta_origen>Planeta Vegeta</planeta_origen>
+                        <poder>9000</poder>
+                    </personaje>
+                </personajes>
+            </dragonball>`;
+
+            // Crear un nuevo parser XML
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+            // Mostrar XML en un elemento div
+            const xmlDiv = document.getElementById("xmlData");
+            xmlDiv.textContent = new XMLSerializer().serializeToString(xmlDoc.documentElement);
+        }
+
+        // Función para cargar y mostrar JSON
+        function cargarJSON() {
+            // Cadena JSON de ejemplo
+            const jsonString = `{
+                "dragonball": {
+                    "personajes": {
+                        "personaje": [
+                            {
+                                "nombre": "Goku",
+                                "raza": "Saiyan",
+                                "planeta_origen": "Planeta Vegeta",
+                                "poder": 10000
+                            },
+
+                            {
+                                "nombre": "Vegeta",
+                                "raza": "Saiyan",
+                                "planeta_origen": "Planeta Vegeta",
+                                "poder": 9000
+                            }
+                        ]
+                    }
+                }
+            }`;
+
+            // Parsear JSON
+            const jsonData = JSON.parse(jsonString);
+
+            // Mostrar JSON en un elemento div
+            const jsonDiv = document.getElementById("jsonData");
+            jsonDiv.textContent = JSON.stringify(jsonData, null, 4);
+        }
+    </script>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <h1>XML y JSON</h1>
+
+    <!-- Botones para cargar XML y JSON -->
+    <button onclick="cargarXML()">Cargar XML</button>
+    <button onclick="cargarJSON()">Cargar JSON</button>
+
+    <!-- Sección para mostrar XML -->
+    <h2>XML:</h2>
+    <div id="xmlData"></div>
+
+    <!-- Sección para mostrar JSON -->
+    <h2>JSON:</h2>
+    <pre id="jsonData"></pre>
+</body>
+</html>

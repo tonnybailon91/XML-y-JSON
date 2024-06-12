@@ -1,0 +1,20 @@
+{
+    "dragonball": {
+        "personajes": {
+            "personaje": [
+                {
+                    "nombre": "Goku",
+                    "raza": "Saiyan",
+                    "planeta_origen": "Planeta Vegeta",
+                    "poder": 10000
+                },
+                {
+                    "nombre": "Vegeta",
+                    "raza": "Saiyan",
+                    "planeta_origen": "Planeta Vegeta",
+                    "poder": 9000
+                }
+            ]
+        }
+    }
+}

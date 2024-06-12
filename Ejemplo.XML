@@ -1,0 +1,16 @@
+<dragonball>
+    <personajes>
+        <personaje>
+            <nombre>Goku</nombre>
+            <raza>Saiyan</raza>
+            <planeta_origen>Planeta Vegeta</planeta_origen>
+            <poder>10000</poder>
+        </personaje>
+        <personaje>
+            <nombre>Vegeta</nombre>
+            <raza>Saiyan</raza>
+            <planeta_origen>Planeta Vegeta</planeta_origen>
+            <poder>9000</poder>
+        </personaje>
+    </personajes>
+</dragonball>
